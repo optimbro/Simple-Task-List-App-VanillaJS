@@ -4,7 +4,6 @@ let ul = document.querySelector("ul");
 let list = document.querySelector(".list");
 let item = document.querySelector(".item");
 
-
 function inputLength() {
   return input.value.length;
 }
@@ -20,7 +19,6 @@ function createListElementItem() {
   dbtn.className = "delete";
   dbtn.appendChild(document.createTextNode("Delete"));
   li.appendChild(dbtn);
-
 }
 
 function clickEvent() {
@@ -39,16 +37,17 @@ button.addEventListener("click", clickEvent);
 
 input.addEventListener("keypress", keyPressEvent);
 
-
-
 list.addEventListener("click", (e) => {
-  if(e.target.matches("li.item")) {
+  if (e.target.matches("li.item")) {
     console.log(e.target);
     e.target.classList.toggle("done");
   }
 
-  if(e.target.matches("li.item button.delete")) {
-    e.target.parentNode.remove();
+  if (e.target.matches("li.item button.delete")) {
+    e.target.parentNode.style.opacity = '0';
+    setTimeout(function () {
+      e.target.parentNode.remove();
+    }, 1000);
+    
   }
-
 });

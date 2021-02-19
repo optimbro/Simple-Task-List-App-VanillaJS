@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
   margin-bottom: 10px;
+  outline: none;
 }
 
 body {
@@ -22,10 +23,12 @@ body {
   vertical-align: middle;
   font-size: 18px;
   padding: 18px 8px 28px 20px;
-  border-radius: 8px; 
-  
-}
+  border-radius: 8px;
 
+  opacity: 1;
+  -webkit-transition: opacity 1000ms linear;
+  transition: opacity 1000ms linear;
+}
 
 li.item.done {
   text-decoration: line-through !important;
